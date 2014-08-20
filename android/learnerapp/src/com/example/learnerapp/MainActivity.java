@@ -1,6 +1,7 @@
 package com.example.learnerapp;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,10 +25,24 @@ public class MainActivity extends ActionBarActivity {
 				// Say Something
 				String sth = "I am just A LEARNER, Dami & Calee are PRO";
 				txt.setText(sth);
+				Intent i = new Intent(MainActivity.this, BetweenActivity.class);
+				i.putExtra("name", "Mr. Calebs");
+				i.putExtra("job", "Developer");
+				i.putExtra("bool", true);
+				i.putExtra("amount", 10000);
+				startActivity(i);
 			}
 		});
 	}
-
+	
+	/*@Override
+	protected void onStart() {
+		
+		super.onStart();
+		Intent i = new Intent(MainActivity.this, BlankActivity.class);
+		startActivity(i);
+	}*/
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
